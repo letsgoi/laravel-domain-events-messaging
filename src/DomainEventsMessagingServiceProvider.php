@@ -2,7 +2,6 @@
 
 namespace Letsgoi\DomainEventsMessaging;
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Letsgoi\DomainEventsMessaging\Consumer\Console\ConsumeCommand;
 use Letsgoi\DomainEventsMessaging\Consumer\ConsumerManager;

@@ -28,7 +28,7 @@ class ConsumerSqsDriverTest extends TestCase
                             'ReceiptHandle' => 'message-id',
                             'Body' => json_encode([
                                 'Subject' => 'message.subject',
-                                'Message' => 'domain-message'
+                                'Message' => 'domain-message',
                             ]),
                         ],
                     ],

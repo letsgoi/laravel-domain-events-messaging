@@ -2,7 +2,6 @@
 
 namespace Letsgoi\DomainEventsMessaging\Consumer\Contracts;
 
-
 use Letsgoi\DomainEventsMessaging\Messages\DomainEventsMessage;
 
 interface ConsumerContract

@@ -28,7 +28,8 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^8.0",
-    "orchestra/testbench": "^5.1"
+    "orchestra/testbench": "^5.1",
+    "letsgoi/php-code-style": "^0.1.1"
   },
   "autoload": {
     "psr-4": {
@@ -51,7 +52,8 @@
     }
   },
   "scripts": {
-    "test": "phpunit"
+    "test": "phpunit",
+    "syntax": "phpcs"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

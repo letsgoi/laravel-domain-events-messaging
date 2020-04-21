@@ -2,7 +2,6 @@
 
 namespace Letsgoi\DomainEventsMessaging\Consumer\Drivers;
 
-
 use Letsgoi\DomainEventsMessaging\Consumer\Contracts\ConsumerContract;
 use Letsgoi\DomainEventsMessaging\Messages\DomainEventsMessage;
 
