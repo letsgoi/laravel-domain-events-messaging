@@ -9,7 +9,7 @@ interface ConsumerContract
     /**
      * Consume message from domain event exchange
      *
-     * @return DomainEventsMessage|null ?DomainEventsMessage
+     * @return DomainEventsMessage|null DomainEventsMessage
      */
     public function consume(): ?DomainEventsMessage;
 }
