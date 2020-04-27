@@ -19,10 +19,8 @@ class Consumer
     /** @var EventDispatcher */
     private $eventDispatcher;
 
-    public function __construct(
-        BusDispatcher $busDispatcher,
-        EventDispatcher $eventDispatcher
-    ) {
+    public function __construct(BusDispatcher $busDispatcher, EventDispatcher $eventDispatcher)
+    {
         $this->busDispatcher = $busDispatcher;
         $this->eventDispatcher = $eventDispatcher;
     }

@@ -30,12 +30,15 @@ class ConsumeCommand extends Command
     {
         if ($this->downForMaintenance()) {
             $this->error('The application is in maintenance mode');
+
             return;
         }
 
         if ($this->option('once')) {
             $this->domainEventConsumer->consume();
+
             $this->info('Event consumer runned!');
+
             return;
         }
 
