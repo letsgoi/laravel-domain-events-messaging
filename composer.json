@@ -1,0 +1,60 @@
+{
+  "name": "letsgoi/laravel-domain-events",
+  "description": "Package to publish/consume domain events messages from Laravel apps",
+  "keywords": [
+    "goi",
+    "letsgoi",
+    "laravel",
+    "domain",
+    "events",
+    "messages",
+    "queue",
+    "communication"
+  ],
+  "homepage": "https://github.com/letsgoi/laravel-domain-events",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "GOI",
+      "email": "tech@letsgoi.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "illuminate/console": "^6.0|^7.0",
+    "illuminate/support": "^6.0|^7.0",
+    "ext-json": "*",
+    "aws/aws-sdk-php": "^3.134"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0",
+    "orchestra/testbench": "^5.1",
+    "letsgoi/php-code-style": "^0.1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Letsgoi\\DomainEventsMessaging\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Letsgoi\\DomainEventsMessaging\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Letsgoi\\DomainEventsMessaging\\DomainEventsMessagingServiceProvider"
+      ],
+      "aliases": {
+        "DomainEventsMessagingConsumer": "Letsgoi\\DomainEventsMessaging\\Facades\\DomainEventsMessagingConsumer"
+      }
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "syntax": "phpcs"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
