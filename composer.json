@@ -1,5 +1,5 @@
 {
-  "name": "letsgoi/laravel-domain-events",
+  "name": "letsgoi/laravel-domain-events-messaging",
   "description": "Package to publish/consume domain events messages from Laravel apps",
   "keywords": [
     "goi",
