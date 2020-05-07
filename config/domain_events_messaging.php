@@ -1,6 +1,34 @@
 <?php
 
 return [
+    'publisher' => [
+        /*
+        |--------------------------------------------------------------------------
+        | Default Domain Event Publisher Connection Name (sns|null)
+        |--------------------------------------------------------------------------
+        |
+        */
+
+        'default' => env('DOMAIN_EVENTS_PUBLISHER_CONNECTION', 'null'),
+
+        /*
+        |--------------------------------------------------------------------------
+        | Domain Event Publisher Connections
+        |--------------------------------------------------------------------------
+        |
+        */
+
+        'connections' => [
+            'sns' => [
+                'topic_arn' => env('AWS_DOMAIN_EVENTS_SNS_TOPIC_ARN'),
+                'key' => env('AWS_ACCESS_KEY_ID'),
+                'secret' => env('AWS_SECRET_ACCESS_KEY'),
+                'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+                'version' => 'latest',
+            ],
+        ],
+    ],
+
     'consumer' => [
         /*
         |--------------------------------------------------------------------------
@@ -23,7 +51,6 @@ return [
                 'queue_url' => env('AWS_DOMAIN_EVENTS_SQS_URL'),
                 'key' => env('AWS_ACCESS_KEY_ID'),
                 'secret' => env('AWS_SECRET_ACCESS_KEY'),
-                'queue' => env('AWS_SQS_URL'),
                 'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
             ],
         ],

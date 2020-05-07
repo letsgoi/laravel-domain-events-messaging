@@ -47,7 +47,8 @@
         "Letsgoi\\DomainEventsMessaging\\DomainEventsMessagingServiceProvider"
       ],
       "aliases": {
-        "DomainEventsMessagingConsumer": "Letsgoi\\DomainEventsMessaging\\Facades\\DomainEventsMessagingConsumer"
+        "DomainEventsMessagingConsumer": "Letsgoi\\DomainEventsMessaging\\Facades\\DomainEventsMessagingConsumer",
+        "DomainEventsMessagingPublisher": "Letsgoi\\DomainEventsMessaging\\Facades\\DomainEventsMessagingPublisher"
       }
     }
   },
