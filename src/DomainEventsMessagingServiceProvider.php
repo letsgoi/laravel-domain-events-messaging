@@ -5,6 +5,7 @@ namespace Letsgoi\DomainEventsMessaging;
 use Illuminate\Support\ServiceProvider;
 use Letsgoi\DomainEventsMessaging\Consumer\Console\ConsumeCommand;
 use Letsgoi\DomainEventsMessaging\Consumer\ConsumerManager;
+use Letsgoi\DomainEventsMessaging\Publisher\PublisherManager;
 
 class DomainEventsMessagingServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,10 @@ class DomainEventsMessagingServiceProvider extends ServiceProvider
 
         $this->app->bind('domain-events-messaging-consumer', function () {
             return new ConsumerManager($this->app);
+        });
+
+        $this->app->bind('domain-events-messaging-publisher', function () {
+            return new PublisherManager($this->app);
         });
 
         $this->mergeConfigFrom(__DIR__ . '/../config/domain_events_messaging.php', 'domain-events-messaging');

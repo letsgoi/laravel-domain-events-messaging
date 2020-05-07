@@ -39,11 +39,19 @@ Service Provider will be automatically registered, however if you want to add it
 
 ### Publisher
 
-Work in Progress
+Domain Events Messaging Publisher will publish messages to exchange defined on config file (on `DOMAIN_EVENTS_PUBLISHER_CONNECTION` env variable).
+
+#### Publishing messages
+
+Just use `publish` method on `DomainEventsMessagingPublisher` facade to send messages with event type:
+
+```php
+DomainEventsMessagingPublisher::publish('message.subject', 'message content');
+```
 
 ### Consumer
 
-Domain Events Consumer will consume messages from the queue driver defined on config file (on `DOMAIN_EVENTS_CONSUMER_CONNECTION` env variable) and launch jobs/events setted on config file (`config/domain_events_messaging.php`) by message subject.
+Domain Events Messaging Consumer will consume messages from the queue driver defined on config file (on `DOMAIN_EVENTS_CONSUMER_CONNECTION` env variable) and launch jobs/events setted on config file (`config/domain_events_messaging.php`) by message subject.
 
 #### Defining events:
 
@@ -103,7 +111,7 @@ AWS_SECRET_ACCESS_KEY=
 AWS_DEFAULT_REGION=
 
 # SNS
-AWS_SNS_DOMAIN_EVENTS_TOPIC_ARN=
+AWS_DOMAIN_EVENTS_SNS_TOPIC_ARN=
 
 # SQS
 AWS_SQS_DOMAIN_EVENTS_URL=
