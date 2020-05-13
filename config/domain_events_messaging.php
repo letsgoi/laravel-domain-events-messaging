@@ -21,8 +21,10 @@ return [
         'connections' => [
             'sns' => [
                 'topic_arn' => env('AWS_DOMAIN_EVENTS_SNS_TOPIC_ARN'),
-                'key' => env('AWS_ACCESS_KEY_ID'),
-                'secret' => env('AWS_SECRET_ACCESS_KEY'),
+                'credentials' => [
+                    'key' => env('AWS_ACCESS_KEY_ID'),
+                    'secret' => env('AWS_SECRET_ACCESS_KEY'),
+                ],
                 'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
                 'version' => 'latest',
             ],
@@ -49,8 +51,10 @@ return [
         'connections' => [
             'sqs' => [
                 'queue_url' => env('AWS_DOMAIN_EVENTS_SQS_URL'),
-                'key' => env('AWS_ACCESS_KEY_ID'),
-                'secret' => env('AWS_SECRET_ACCESS_KEY'),
+                'credentials' => [
+                    'key' => env('AWS_ACCESS_KEY_ID'),
+                    'secret' => env('AWS_SECRET_ACCESS_KEY'),
+                ],
                 'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
             ],
         ],
