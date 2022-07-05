@@ -9,8 +9,8 @@ It's divided in two main elements:
 
 ## Requirements
 
-- PHP >= 7.2
-- Laravel >= 6.0
+- PHP >= 7.4
+- Laravel >= 8.0
 
 ## Instalation
 
