@@ -49,7 +49,7 @@ class ConsumerSqsDriver implements ConsumerContract
                     'timeout' => 60,
                     'connect_timeout' => 60,
                 ],
-            ]
+            ],
         );
 
         return (new Sdk($config))->createClient('sqs');
