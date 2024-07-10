@@ -13,10 +13,11 @@ use Letsgoi\DomainEventsMessaging\Tests\Stubs\FakeEvent;
 use Letsgoi\DomainEventsMessaging\Tests\Stubs\FakeJob;
 use Letsgoi\DomainEventsMessaging\Tests\Stubs\FakeNotDispatchableEvent;
 use Letsgoi\DomainEventsMessaging\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ConsumerTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_should_dispatch_event_on_consume_domain_event_message()
     {
         Event::fake();
@@ -38,7 +39,7 @@ class ConsumerTest extends TestCase
         });
     }
 
-    /** @test */
+    #[Test]
     public function it_should_dispatch_job_on_consume_domain_event_message()
     {
         Bus::fake();
@@ -60,7 +61,7 @@ class ConsumerTest extends TestCase
         });
     }
 
-    /** @test */
+    #[Test]
     public function it_should_throw_exception_on_consume_domain_event_message_with_not_dispatchable_event_associated()
     {
         $domainEventMessage = new DomainEventsMessage('message.subject', 'domain-message');

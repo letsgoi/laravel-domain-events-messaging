@@ -7,22 +7,22 @@ use Illuminate\Support\Facades\Config;
 use Letsgoi\DomainEventsMessaging\Consumer\Drivers\ConsumerSqsDriver;
 use Letsgoi\DomainEventsMessaging\Tests\TestCase;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Test;
 
 class ConsumerSqsDriverTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_should_receive_message_and_delete_it_from_sqs_on_consume()
     {
         Config::set('domain_events_messaging.consumer.connections.sqs.queue_url', 'queue_url');
 
         $sqsClient = $this->mock(SqsClient::class, static function (MockInterface $mock) {
-            $mock->shouldReceive('receiveMessage')
+            $mock->expects('receiveMessage')
                 ->withArgs([[
                     'QueueUrl' => 'queue_url',
                     'MaxNumberOfMessages' => 1,
                 ]])
-                ->once()
-                ->andReturn([
+                ->andReturns([
                     'Messages' => [
                         [
                             'ReceiptHandle' => 'message-id',
